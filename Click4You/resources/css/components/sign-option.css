@@ -1,0 +1,66 @@
+/* Variables para colores */
+:root {
+  --purple-primary: #6a00c7;
+  --purple-light: #d19fe8;
+  --blue-link: #006cff;
+  --text-dark: #333;
+  --text-light: #666;
+  --border-light: #e0e0e0;
+  --border-dark: #ccc;
+  --background-light: #f8f8f8;
+  --background-dark: #2a2a47;
+  --input-bg: #fff;
+  --error-color: #ff4d4f;
+  --success-color: #52c41a;
+}
+
+/* Estilos globales y reseteo básico */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-light);
+  color: var(--text-dark);
+}
+
+/* Estilos compartidos para las páginas de autenticación */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+}
+
+/* Panel general de autenticación (login y registro) */
+.login-panel,
+.register-panel {
+  background-color: white;
+  width: 100%;
+  max-width: 900px;
+  padding: 2.5rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-dark);
+}
+
+.panel-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.panel-header h1 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.panel-header p {
+  font-size: 1rem;
+  color: var(--text-light);
+  margin-top: 0;
+}

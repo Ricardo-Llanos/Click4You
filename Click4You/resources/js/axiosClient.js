@@ -2,8 +2,8 @@
 
 import axios from 'axios';
 
+// Definimos una instancia personalizada de axios
 const axiosClient = axios.create({
-    // Define la URL base de tu API aquí
     baseURL: 'http://127.0.0.1:8000/api'
 });
 
@@ -28,7 +28,7 @@ axiosClient.interceptors.response.use(
         if (error.response.status === 401) {
             console.log('Token expirado o no válido. Redirigiendo al login...');
             localStorage.removeItem('authToken');
-            window.location.href = '/app';
+            window.location.href = '/';
         }
         return Promise.reject(error);
     }

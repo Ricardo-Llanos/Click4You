@@ -1,0 +1,234 @@
+.main-header {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ffffff;
+    padding: 10px, 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    align-items: center; /* Centra los elementos verticalmente */
+    max-width: 100%; /* Ancho máximo para el contenedor */
+    margin: 0 auto; /* Centra el contenedor */
+}
+
+/* Estilos para el logo y el texto */
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.logo-link img {
+  height: 80px; /* Ajusta el tamaño del logo*/
+  margin-right: 0px;
+}
+
+.logo-text {
+  color: #6a00c7;
+}
+
+.logo-span {
+  color: #006cff;
+}
+
+/* Estilos para la ubicación y la moneda */
+.geo-info {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Espacio entre los elementos de geo-info */
+
+  margin-left: 20px;
+}
+
+.location,
+.currency-selector {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Espacio entre el ícono y el texto */
+}
+
+.location img,
+.currency-selector img {
+  height: 24px; /* Tamaño de los íconos */
+}
+
+#selector-lenguage{
+  height: 11px;
+}
+
+/* Estilos para el formulario de búsqueda */
+.search-form {
+  flex-grow: 1; /* Permite que el formulario ocupe el espacio restante */
+  margin: 0 20px;
+}
+
+.search-input-container {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  overflow: hidden; /* Oculta los bordes del input y el botón */
+}
+
+.search-input-container input {
+  flex-grow: 1;
+  border: none;
+  padding: 10px 15px;
+  outline: none; /* Quita el borde de enfoque por defecto */
+  font-size: 16px;
+}
+
+.search-button {
+  background-color: #d19fe8; /* Color de fondo del botón de búsqueda */
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.search-button img {
+  height: 20px; /* Tamaño del ícono de búsqueda */
+}
+
+/* Estilos para los enlaces de Sign In y Sign Up */
+.user-actions ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 15px; /* Espacio entre los elementos de la lista */
+}
+
+.user-actions a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.user-actions a:hover{
+  color: #9a1fe0;
+  text-decoration: underline;
+}
+
+
+
+
+/* ========== ADMINISTRATOR ==========*/
+/* user-actions CSS (ejemplo) */
+.user-actions ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem; /* Espacio entre los íconos */
+}
+
+.user-item {
+  position: relative; /* Para posicionar el badge */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.user-item .item-link {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-item img {
+  height: 24px; /* Ajusta el tamaño de los íconos */
+  width: 24px;
+}
+
+.user-item span {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+.item-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: var(--purple-primary);
+  color: white;
+  border-radius: 50%;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+/* --- Estilos para la insignia de notificación (círculo rojo) --- */
+.notification-badge {
+    position: absolute;
+    top: 5px; /* Ajusta la posición vertical */
+    right: 5px; /* Ajusta la posición horizontal */
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+/* --- Estilos para el pop-up de usuario --- */
+.user-popup {
+    position: absolute;
+    top: 100%; /* Posiciona el pop-up debajo del ícono */
+    right: 0px; /* Ajusta la posición horizontal */
+    width: 200px; /* Ancho del pop-up */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    margin-top: 10px; /* Espacio entre el ícono y el pop-up */
+    /* Por defecto, el pop-up debe estar oculto */
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Para que el badge se posicione correctamente en el enlace */
+.item-link {
+    position: relative;
+}
+
+/* Estilos para el pop-up de usuario */
+.account-trigger {
+    position: relative; /* Es fundamental para posicionar el pop-up dentro */
+}
+
+/* Regla para mostrar el pop-up en hover */
+.account-trigger:hover .user-popup {
+    display: block; /* Muestra el pop-up cuando el usuario hace hover en el li */
+}
+
+.user-item:hover .user-popup {
+    /* Muestra el pop-up cuando se hace hover sobre el li */
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.popup-options {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.popup-options a {
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.popup-options a:hover {
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}

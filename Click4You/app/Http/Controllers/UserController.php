@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Http\Requests\RegisterUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use Exception;
+use Illuminate\Http\Response;
 
 class UserController extends Controller
 {
@@ -40,7 +41,7 @@ class UserController extends Controller
         return response()->json([
             'message' => 'Usuario creado exitosamente',
             'data' => $user
-        ]);
+        ], Response::HTTP_CREATED);
     }
 
     /**

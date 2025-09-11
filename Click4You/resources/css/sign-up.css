@@ -1,0 +1,135 @@
+/* Estilos del formulario de registro */
+.register-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Contenedor de las dos columnas del formulario */
+.form-group-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 2.5rem;
+  width: 100%;
+}
+
+/* Secciones de campos agrupados (fieldset) */
+.form-section {
+  border: 1px solid var(--border-dark);
+  border-radius: 0.6rem;
+  padding: 1.5rem;
+}
+
+.form-section legend {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0 0.5rem;
+  color: var(--text-dark);
+}
+
+/* Grupos de campos individuales (label + input) */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  color: var(--text-light);
+}
+
+.form-group input {
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-dark);
+  background-color: var(--input-bg);
+  color: var(--text-dark);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus {
+  border-color: var(--purple-primary);
+  box-shadow: 0 0 0 3px rgba(106, 0, 199, 0.2);
+}
+
+/* Requisitos de la contraseña */
+.password-requirements {
+  list-style: none;
+  padding: 0;
+  margin-top: 0.7rem;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+.password-requirements li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.password-requirements li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--text-light);
+  font-weight: bold;
+}
+
+/* Botón de registro */
+.btn-primary {
+  width: 50%; /* Puedes ajustar el ancho o usar `max-width` */
+  align-self: center;
+  padding: 0.9rem 2.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--purple-primary);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #5800a6;
+  transform: translateY(-1px);
+}
+
+/* Enlace de "Iniciar Sesión" */
+.auth-link-text {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  color: var(--text-light);
+}
+
+.auth-link-text a {
+  color: var(--blue-link);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.auth-link-text a:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+  .register-panel {
+    padding: 2rem 1.5rem;
+  }
+
+  .form-group-wrapper {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+}

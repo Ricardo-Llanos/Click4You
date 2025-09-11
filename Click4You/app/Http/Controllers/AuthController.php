@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 
 use App\Models\User;
+use Illuminate\Http\Response;
 
 class AuthController extends Controller
 {
@@ -29,15 +30,19 @@ class AuthController extends Controller
 
         return response()->json([
             'message' => 'Inicio de Sesión Exitoso',
-            'token'=>$token,
-            'data'=>$user->only(['names', 'email'])
-        ]);
+            'token' => $token,
+            'data'=> $user->only(['names', 'email'])
+        ], Response::HTTP_ACCEPTED);
     }
 
     
-    public function logout() 
+    public function logout(Request $request) 
     {
+        $request->user()->currentAccessToken()->delete();
 
+        return response()->json([
+            'message' => "Sesión cerrada correctamente"
+        ], Response::HTTP_ACCEPTED);
     }
 }
 

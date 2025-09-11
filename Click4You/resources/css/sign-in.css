@@ -1,0 +1,187 @@
+/* Variables para colores, reutilizando las de tu header */
+:root {
+  --purple-primary: #6a00c7;
+  --purple-light: #d19fe8;
+  --blue-link: #006cff;
+  --text-dark: #333;
+  --text-light: #666;
+  --border-light: #e0e0e0;
+  --input-bg: #fff;
+  --button-hover: #5800a6;
+}
+
+/* Contenedor principal para la página de autenticación */
+.auth-page {
+  background-color: var(--background-light); /* Color de fondo claro */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centra el contenido verticalmente */
+  padding: 3rem 1rem;
+}
+
+/* Panel de inicio de sesión */
+.login-panel {
+  background-color: white;
+  width: 100%;
+  max-width: 450px; /* Ancho del panel */
+  padding: 2.5rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* Centra el texto del header */
+}
+
+/* Título de la página */
+.panel-header h1 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+/* Estilos del formulario */
+form {
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  color: var(--text-light);
+  align-self: flex-start; /* Alinea la etiqueta a la izquierda */
+}
+
+.form-group input {
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-light);
+  background-color: var(--input-bg);
+  color: var(--text-dark);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus {
+  border-color: var(--purple-primary);
+  box-shadow: 0 0 0 3px rgba(106, 0, 199, 0.2);
+}
+
+/* Acciones especiales (recordar y olvidar contraseña) */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+}
+
+.form-check input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  accent-color: var(--purple-primary); /* Color del checkbox */
+}
+
+.form-actions a {
+  color: var(--blue-link);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.form-actions a:hover {
+  text-decoration: underline;
+}
+
+/* Botones principales */
+.btn {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--purple-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--button-hover);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.divider::before {
+  margin-right: .5rem;
+}
+
+.divider::after {
+  margin-left: .5rem;
+}
+
+.btn-google {
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-light);
+  color: var(--text-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.btn-google:hover {
+  background-color: #f0f0f0;
+}
+
+.btn-google img {
+  height: 1.2rem;
+}
+
+/* Enlace para crear cuenta */
+.new-account {
+  margin-top: 1.5rem;
+}
+
+.new-account a {
+  color: var(--blue-link);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.new-account a:hover {
+  text-decoration: underline;
+}
