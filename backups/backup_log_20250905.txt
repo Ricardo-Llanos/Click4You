@@ -1,0 +1,11 @@
+--- Fri Sep  5 01:13:19 PM -05 2025 ---
+Iniciando backup de la base de datos 'click4you'...
+pg_dump: error: connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "postgres"
+ERROR: El backup ha fallado. Revisar el log para más detalles.
+Proceso finalizado.
+--- Fri Sep  5 01:15:37 PM -05 2025 ---
+Iniciando backup de la base de datos 'click4you'...
+pg_dump: error: aborting because of server version mismatch
+pg_dump: detail: server version: 17.6; pg_dump version: 16.9
+ERROR: El backup ha fallado. Revisar el log para más detalles.
+Proceso finalizado.

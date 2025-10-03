@@ -9,10 +9,23 @@ use Illuminate\Validation\ValidationException;
 use App\Models\User;
 use Illuminate\Http\Response;
 
+use App\Helpers\DataFormatter;
+
 class AuthController extends Controller
 {
+    protected DataFormatter $dataFormatter;
+
+    public function __construct(
+        DataFormatter $dataFormatter
+    )
+    {
+        $this->dataFormatter = $dataFormatter;
+    }
+
     public function login(Request $request)
     {
+        $this->dataFormatter->emailFormat($request->email);
+
         $dataValidate = $request->validate([
             'email' => ['required', 'email', 'exists:users,email'],
             'password' => ['required']

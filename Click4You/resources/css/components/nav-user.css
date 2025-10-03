@@ -1,0 +1,133 @@
+/* Contenedor principal de la página de perfil */
+.profile-page {
+    display: flex;
+    flex-direction: row; /* Alinea los elementos uno al lado del otro */
+    gap: 2rem; /* Espacio entre las columnas */
+    padding: 2rem;
+    background-color: #f7f7f7;
+    min-height: 100vh;
+}
+
+/* Columna de navegación lateral */
+.profile-nav-sidebar {
+    background-color: white;
+    padding: 1.5rem 0.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-nav-sidebar a {
+    margin-bottom: 1.5rem;
+}
+
+.profile-nav-sidebar img {
+    width: 35px;
+    height: 35px;
+}
+
+/* Columna de contenido principal */
+.profile-main-content {
+    flex-grow: 1; /* Permite que la columna principal ocupe el espacio restante */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Panel de información del perfil (tarjeta blanca) */
+.profile-info-panel {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para los títulos y subtítulos */
+.profile-header {
+    margin-bottom: 1.5rem;
+}
+
+.profile-header h1 {
+    font-size: 2rem;
+    color: #333;
+    margin: 0;
+}
+
+.profile-header p {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+/* Secciones de la página (ej. Bio e Información) */
+.content-section {
+    display: flex;
+    flex-direction: row; /* Coloca las tarjetas una al lado de la otra */
+    gap: 2rem;
+}
+
+/* Tarjeta del perfil de usuario (lado izquierdo) */
+.user-card {
+    flex: 1; /* Ocupa el mismo espacio que la otra tarjeta */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.user-card .info {
+    margin-bottom: 1.5rem;
+}
+
+.user-card .info #profile-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.user-card .profile-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    overflow: hidden;
+}
+
+.user-card .profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Tarjeta de bio e información (lado derecho) */
+.bio-card {
+    flex: 1.5; /* Ocupa más espacio que la tarjeta de usuario */
+}
+
+/* Estructura del formulario de dos columnas */
+.form-columns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Permite que los elementos salten a una nueva fila */
+    gap: 1.5rem;
+}
+
+/* Estilo para los grupos de formulario */
+.form-group {
+    flex: 1 1 45%; /* Flexbox para dos columnas */
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.form-group input, .form-group select {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

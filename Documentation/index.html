@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación - Click4You</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-900 text-gray-300">
+
+    <div class="flex h-screen overflow-hidden">
+        
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <script src="js/documentation.js"></script>
+
+        <aside class="w-64 bg-gray-900 border-r border-gray-800 p-4 overflow-y-auto">
+            <div class="flex items-center space-x-2 mb-8">
+                <i class="fas fa-cube text-blue-500 text-2xl"></i>
+                <h1 class="text-xl font-bold text-gray-100">Click4You</h1>
+            </div>
+            
+            <nav>
+                <ul class="space-y-4">
+                    <li>
+                        <h2 class="text-xs font-semibold uppercase text-gray-500 mb-2">Introducción</h2>
+                        <ul class="space-y-1 ml-2">
+                            <li><a href="#" class="nav-link block py-1 px-2 rounded-md bg-gray-800 text-gray-100 font-semibold border-l-2 border-blue-500" data-path="md/primeros-pasos.md">Primero Pasos</a></li>
+                            <li><a href="#" class="nav-link block py-1 px-2 rounded-md hover:bg-gray-800 transition-colors" data-path="md/installation.md">Installation</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2 class="text-xs font-semibold uppercase text-gray-500 mb-2">Conceptos principales</h2>
+                        <ul class="space-y-1 ml-2">
+                            <li><a href="#" class="nav-link block py-1 px-2 rounded-md hover:bg-gray-800 transition-colors" data-path="md/installation.md">Understanding caching</a></li>
+                            <li><a href="#" class="nav-link block py-1 px-2 rounded-md hover:bg-gray-800 transition-colors" data-path="md/installation.md">Predicting user behavior</a></li>
+                            <li><a href="#" class="nav-link block py-1 px-2 rounded-md hover:bg-gray-800 transition-colors" data-path="md/installation.md">Basics of time-travel</a></li>
+                            <li><a href="#" class="nav-link block py-1 px-2 rounded-md hover:bg-gray-800 transition-colors" data-path="md/installation.md">Introduction to string theory</a></li>
+                            <li><a href="#" class="nav-link block py-1 px-2 rounded-md hover:bg-gray-800 transition-colors" data-path="md/installation.md">The butterfly effect</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2 class="text-xs font-semibold uppercase text-gray-500 mb-2">Guías avanzadas</h2>
+                        <ul class="space-y-1 ml-2">
+                            </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="flex-1 flex overflow-hidden">
+            <div id="markdown-container" class="flex-1 overflow-y-auto ...">
+                </div>
+
+            <aside class="w-72 hidden lg:block bg-gray-900 border-l border-gray-800 p-8 overflow-y-auto">
+                </aside>
+            <!-- <div class="flex-1 overflow-y-auto p-8 lg:p-12">
+                <header class="flex justify-between items-center mb-8">
+                    <div class="relative w-full max-w-lg">
+                        <input type="text" placeholder="Search docs" class="w-full bg-gray-800 text-gray-300 rounded-md py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                        <span class="absolute left-3 top-2.5 text-gray-400">
+                            <i class="fas fa-search"></i>
+                        </span>
+                        <span class="absolute right-3 top-2.5 text-xs text-gray-400 border border-gray-600 rounded-sm px-1 py-0.5">Ctrl K</span>
+                    </div>
+                    <div class="flex items-center space-x-4 ml-4">
+                        <a href="#" class="text-gray-400 hover:text-gray-200 transition-colors"><i class="fas fa-moon text-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gray-200 transition-colors"><i class="fab fa-github text-lg"></i></a>
+                    </div>
+                </header>
+
+                <h1 class="text-4xl lg:text-5xl font-extrabold text-gray-100 mb-4">Getting started</h1>
+                <p class="text-lg text-gray-400 mb-12">Learn how to get CacheAdvance set up in your project in under thirty minutes or it's free.</p>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="bg-gray-800 rounded-lg p-6 flex flex-col items-start hover:bg-gray-700 transition-colors">
+                        <div class="text-blue-500 mb-4">
+                            <i class="fas fa-compass fa-2x"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Installation</h3>
+                        <p class="text-gray-400">Step-by-step guides to setting up your system and installing the library.</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-6 flex flex-col items-start hover:bg-gray-700 transition-colors">
+                        <div class="text-blue-500 mb-4">
+                            <i class="fas fa-th fa-2x"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Architecture guide</h3>
+                        <p class="text-gray-400">Learn how the internals work and contribute.</p>
+                    </div>
+                </div>
+
+                </div> -->
+
+            <!-- <aside class="w-72 hidden lg:block bg-gray-900 border-l border-gray-800 p-8 overflow-y-auto">
+                <h2 class="text-xs font-semibold uppercase text-gray-500 mb-4">En esta página</h2>
+                <nav>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#quick-start" class="block text-blue-400 font-semibold border-l-2 border-blue-500 pl-2">Quick start</a></li>
+                        <li><a href="#installing-dependencies" class="block text-gray-400 hover:text-gray-200 pl-2 transition-colors">Installing dependencies</a></li>
+                        <li><a href="#configuring-the-library" class="block text-gray-400 hover:text-gray-200 pl-2 transition-colors">Configuring the library</a></li>
+                        <li><a href="#basic-usage" class="block text-gray-400 hover:text-gray-200 pl-2 transition-colors">Basic usage</a></li>
+                        <li><a href="#your-first-cache" class="block text-gray-400 hover:text-gray-200 pl-2 transition-colors">Your first cache</a></li>
+                        <li><a href="#clearing-the-cache" class="block text-gray-400 hover:text-gray-200 pl-2 transition-colors">Clearing the cache</a></li>
+                        <li><a href="#adding-middleware" class="block text-gray-400 hover:text-gray-200 pl-2 transition-colors">Adding middleware</a></li>
+                        <li><a href="#getting-help" class="block text-gray-400 hover:text-gray-200 pl-2 transition-colors">Getting help</a></li>
+                        <li><a href="#submit-an-issue" class="block text-gray-400 hover:text-gray-200 pl-2 transition-colors">Submit an issue</a></li>
+                        <li><a href="#join-the-community" class="block text-gray-400 hover:text-gray-200 pl-2 transition-colors">Join the community</a></li>
+                    </ul>
+                </nav>
+            </aside> -->
+
+        </main>
+    </div>
+
+</body>
+</html>

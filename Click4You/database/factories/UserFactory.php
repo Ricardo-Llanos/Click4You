@@ -23,15 +23,18 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        $names = fake()->firstName();
+        $paternalSurname = fake()->lastName();
+        $maternalSurname = fake()->lastName();
+
+        $emails = ['@gmail.com', '@uncp.edu.pe', '@outlook.com'];
         return [
-            'names' => fake()->name(),
-            'paternal_surname' => fake()->firstNameMale(),
-            'maternal_surname' => fake()->firstNameFemale(),
-            // 'phone' => fake()->phoneNumber(),
-            'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('123456'),
-            'remember_token' => Str::random(10),
+            'names' => $names,
+            'paternal_surname' => $paternalSurname,
+            'maternal_surname' => $maternalSurname,
+            'phone' => '9'.fake()->numerify('########'), // 9{8 caractéres}
+            'email' => Str::lower($names.'.'.$paternalSurname.$emails[0]),
+            'password' => static::$password ??= Hash::make('123456') // --- ESTUDIAR ---
         ];
     }
 

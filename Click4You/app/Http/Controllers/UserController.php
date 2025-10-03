@@ -4,25 +4,35 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Response;
 
 use App\Models\User;
-use App\Http\Requests\RegisterUserRequest;
-use App\Http\Requests\UpdateUserRequest;
-use Exception;
-use Illuminate\Http\Response;
+use App\Http\Requests\User\RegisterUserRequest;
+use App\Http\Requests\User\UpdateUserRequest;
+use App\Http\Resources\UserResource;
+use App\Services\UserService;
+
 
 class UserController extends Controller
 {
+    protected UserService $userService;
+
+    public function __construct(
+        UserService $userService
+    )
+    {
+        $this->userService = $userService;
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $users = User::all();
+        $users = $this->userService->showUser();
 
-        return response()->json([
-            'data' => $users
-        ]);
+        return response()->json(
+            UserResource::collection($users) // Usamos el Resource especializado
+        , Response::HTTP_ACCEPTED);
     }
 
     /**
@@ -30,18 +40,19 @@ class UserController extends Controller
      */
     public function store(RegisterUserRequest $request)
     {
-        $userData = $request->validated();
+        // Validamos la información
+        $data = $request->validated();
 
-        $password = Hash::make($userData['password']);
+        // Extraemos la información
+        $userData = $data['user_data'];
 
-        $userData['password'] = $password;
+        // Llamamos al servicio
+        $user = $this->userService->storeUser($userData);
 
-        $user = User::create($userData);
-
-        return response()->json([
-            'message' => 'Usuario creado exitosamente',
-            'data' => $user
-        ], Response::HTTP_CREATED);
+        // Respuesta
+        return response()->json(
+            new UserResource($user)
+        , Response::HTTP_CREATED);
     }
 
     /**
@@ -49,11 +60,11 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        $user = User::findOrFail($id);
+        $user = $this->userService->showUser($id);
 
-        return response()->json([
-            'data' => $user
-        ]);
+        return response()->json(
+            new UserResource($user)
+        , Response::HTTP_ACCEPTED);
     }
 
     /**
@@ -61,16 +72,19 @@ class UserController extends Controller
      */
     public function update(UpdateUserRequest $request, string $id)
     {
-        $userData = $request->validated();
+        // Validamos la información
+        $data = $request->validated();
 
-        $user = User::findOrFail($id);
+        $userData = $data['user_data'];
 
-        $user->update($userData);
+        // Llamamos al servicio
+        $user = $this->userService->updateUser($userData, $id);
 
+        // Generamos la respuesta
         return response()->json([
             'message'=>'Usuario editado correctamente',
-            'data'=>$user
-        ]);
+            'data'=> new UserResource($user)
+        ], Response::HTTP_ACCEPTED);
     }
 
     /**
@@ -78,6 +92,10 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $this->userService->destroyUser($id);
+
+        return response()->json([
+            'message'=>'Usuario eliminado correctamente'
+        ], Response::HTTP_ACCEPTED);
     }
 }

@@ -6,13 +6,14 @@
         <title>Click4You</title>
 
         @vite(['resources/css/app.css',
-                'resources/css/components/header.css'])
+                'resources/css/components/header.css',
+                'resources/css/components/nav-user.css'])
 
         @vite(['resources/js/login-header.js'])
     </head>
     <body>
         @include('components.header')
-        <!-- @include('components.navigation') -->
+        @include('components.navigation-user')
 
         @yield('content')
     </body>
