@@ -193,6 +193,13 @@
     transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
+.user-popup.is-hidden{
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.9);
+    transition: all 0.2s ease;
+}
+
 /* Para que el badge se posicione correctamente en el enlace */
 .item-link {
     position: relative;

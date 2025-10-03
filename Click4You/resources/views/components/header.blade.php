@@ -66,10 +66,10 @@
             <img src="{{ asset('img/usuario.png') }}" alt="Cuenta">
             <span>Account</span>
           </a>
-          <div class="user-popup">
+          <div class="user-popup is-hidden">
             <div class="popup-options">
-              <a href="{{ route('profile') }}">Perfil</a>
-              <a href="{{ route('settings') }}">Configuración</a>
+              <a href="{{ route('profile') }}" class="js-nav-link">Perfil</a>
+              <a href="{{ route('settings') }}" class="js-nav-link">Configuración</a>
               <a href="#" id="logout-link">Cerrar Sesión</a>
             </div>
           </div>

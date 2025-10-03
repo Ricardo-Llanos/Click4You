@@ -1,10 +1,10 @@
 <main class="profile-page">
     <!-- Panel de navegación -->
     <nav class="profile-nav-sidebar">
-        <a href="#" aria-label="Ir a la página de usuario">
+        <a href="{{ route('profile') }}" class="js-nav-link" aria-label="Ir a la página de usuario">
             <img src="{{ asset('img/usuario.png') }}" alt="Ícono de usuario">
         </a>
-        <a href="#" arial-label="Ir a la configuración del perfil.">
+        <a href="{{ route('settings') }}" class="js-nav-link" arial-label="Ir a la configuración del perfil.">
             <img src="{{ asset('img/engranaje.png') }}" alt="Ícono de engranaje">
         </a>
 

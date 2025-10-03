@@ -19,8 +19,8 @@ Route::get('/sign-in', function(){
 
 // ================ RUTAS AUTENTICACIÓN ================
 Route::middleware('auth:sanctum')->group(function (){
-    Route::get('/g', function(){
-        return view('');
+    Route::get('/profile', function(){
+        return view('user.profile');
     })->name('profile');
 
     Route::get('/gh', function(){
